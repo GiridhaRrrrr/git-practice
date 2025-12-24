@@ -17,12 +17,13 @@ public class TodoService {
         return repo.findAll();
     }
 
-    public void addProduct(Todo todo) {
-        repo.save(todo);
+    public Todo getTodoById(int id) {
+        return repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Todo not found"));
     }
 
-    public Todo getTodoById(int id) {
-        return repo.findById(id).orElse(new Todo());
+    public void addProduct(Todo todo) {
+        repo.save(todo);
     }
 
     public void updateProduct(Todo todo) {
@@ -34,5 +35,11 @@ public class TodoService {
 
          repo.save(tt);
 
+        repo.save(todo);
     }
+
+    public void deleteProduct(int id) {
+        repo.deleteById(id);
+    }
+
 }
