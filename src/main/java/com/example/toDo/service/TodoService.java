@@ -27,14 +27,6 @@ public class TodoService {
     }
 
     public void updateProduct(Todo todo) {
-        List<Todo> all = getTodos();
-         Todo tt = all.stream()
-                .filter(t -> t.getId() == todo.getId())
-                 .findFirst()
-                 .orElseThrow(() -> new RuntimeException("Todo not found"));
-
-         repo.save(tt);
-
         repo.save(todo);
     }
 
