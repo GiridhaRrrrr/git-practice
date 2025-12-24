@@ -12,7 +12,7 @@ import java.util.List;
 public class TodoController {
 
     @Autowired
-    TodoService service;
+    private TodoService service;
 
     @GetMapping("/")
     public List<Todo> getTodos()

@@ -11,7 +11,7 @@ import java.util.List;
 public class TodoService {
 
     @Autowired
-    TodoRepo repo;
+    private TodoRepo repo;
 
     public List<Todo> getTodos() {
         return repo.findAll();
@@ -33,4 +33,5 @@ public class TodoService {
     public void deleteProduct(int id) {
         repo.deleteById(id);
     }
+
 }
