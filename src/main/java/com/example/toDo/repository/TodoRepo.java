@@ -1,0 +1,7 @@
+package com.example.toDo.repository;
+
+import com.example.toDo.model.Todo;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TodoRepo extends JpaRepository<Todo,Integer> {
+}
